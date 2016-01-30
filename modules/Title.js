@@ -16,7 +16,13 @@ export function flushTitle() {
   return title
 }
 
+const { oneOfType, string, func } = React.PropTypes
+
 const Title = React.createClass({
+
+  propTypes: {
+    render: oneOfType([ string, func ]).isRequired
+  },
 
   getInitialState() {
     return {
